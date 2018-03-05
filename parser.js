@@ -76,7 +76,7 @@ function weight(c) {
 }
 
 module.exports = function(text, { babylon }) {
-  const traverse = require("@babel/traverse").default;
+  const traverse = require("babel-traverse").default;
   const ast = babylon(text);
 
   traverse(ast, {
