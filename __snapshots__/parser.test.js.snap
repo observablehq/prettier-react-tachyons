@@ -9,3 +9,8 @@ exports[`reformatting examples 2`] = `
 "<div className=\\"ph2 pv2 unknown\\" />;
 "
 `;
+
+exports[`reformatting examples 3`] = `
+"<div className=\\"dib pa2 mr3 black-50 hover-black bg-white ba b--black-30 br2 pointer\\" />;
+"
+`;

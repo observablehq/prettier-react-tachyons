@@ -12,4 +12,12 @@ test("reformatting examples", () => {
       parser
     })
   ).toMatchSnapshot();
+  expect(
+    prettier.format(
+      `<div className='dib pa2 mr3 black-50 hover-black bg-white ba b--black-30 br2 pointer' />`,
+      {
+        parser
+      }
+    )
+  ).toMatchSnapshot();
 });

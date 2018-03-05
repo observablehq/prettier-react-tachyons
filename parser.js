@@ -40,26 +40,28 @@ const colors = [
 const directions = "hvatlbr".split("");
 
 // display, position, dimension, measure, flex, padding, margin, negative margin, font
-// font weight, line height, whitespace, color, opacity, background,
+// font size, font weight, line height, whitespace, color, opacity, background,
 // hover background, border, border color,
 // border radius
 let order = [
-  /^d/,
+  /^(dn|di|db|dib|dit|dt|dtc|flex)/,
   /^(static|relative|absolute|fixed)/,
   /^(top|right|bottom|left)-/,
   /^measure/,
   /^w\d/,
   /^mw\d/,
   /^h\d/,
-  /^(flex|content|items|self|justify|order)/,
+  /^(content|items|self|justify|order)/,
   ...directions.map(d => new RegExp(`^p${d}\\d`)),
   ...directions.map(d => new RegExp(`^m${d}\\d`)),
   ...directions.map(d => new RegExp(`^n${d}\\d`)),
   /^(code|sans-serif|serif)/,
+  /^f\d/,
   /^fw\d/,
   /^lh-/,
   /^(ws-normal|nowrap|pre)/,
   new RegExp(`^(${colors.join("|")})`),
+  new RegExp(`^(${colors.map(c => `hover-${c}`).join("|")})`),
   /^o\d/,
   /^bg-/,
   /^hover-bg-/,
