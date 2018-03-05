@@ -48,7 +48,7 @@ let order = [
   /^(static|relative|absolute|fixed)/,
   /^(top|right|bottom|left)-/,
   /^measure/,
-  /^w\d/,
+  /^w-?\d/,
   /^mw\d/,
   /^h\d/,
   /^center/,

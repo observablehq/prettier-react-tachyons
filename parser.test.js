@@ -8,7 +8,7 @@ test("reformatting examples", () => {
     })
   ).toMatchSnapshot();
   expect(
-    prettier.format(`<div className='unknown pv2 ph2' />`, {
+    prettier.format(`<div className='unknown pv2 ph2 w-50 h2' />`, {
       parser
     })
   ).toMatchSnapshot();
