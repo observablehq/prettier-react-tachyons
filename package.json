@@ -1,0 +1,13 @@
+{
+  "name": "@observablehq/prettier-react-tachyons",
+  "version": "1.0.0",
+  "main": "parser.js",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^22.4.2",
+    "prettier": "^1.11.1"
+  },
+  "dependencies": {
+    "@babel/traverse": "^7.0.0-beta.40"
+  }
+}
