@@ -93,7 +93,7 @@ module.exports = function(text, { babylon }) {
         node.value.type == "StringLiteral"
       ) {
         node.value.extra.raw = `"${Array.from(
-          new Set(node.value.value.split(/\s+/)),
+          new Set(node.value.value.split(/\s+/).filter(Boolean)),
           (c, i) => [c, weight(c), i]
         )
           .sort(

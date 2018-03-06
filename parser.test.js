@@ -20,4 +20,9 @@ test("reformatting examples", () => {
       }
     )
   ).toMatchSnapshot();
+  expect(
+    prettier.format(`<div className=' h2 ' />`, {
+      parser
+    })
+  ).toMatchSnapshot();
 });
