@@ -44,7 +44,7 @@ const directions = "hvatlbr".split("");
 // hover background, border, border color,
 // border radius
 let order = [
-  /^(dn|di|db|dib|dit|dt|dtc|flex)/,
+  /^(dn|di|db|dib|dit|dt|dtc|flex|inline-flex)/,
   /^(static|relative|absolute|fixed)/,
   /^(top|right|bottom|left)-/,
   /^measure/,
