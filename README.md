@@ -7,6 +7,20 @@ attributes on JSX elements, that takes care of the following:
 - Eliminating redundant classes
 - Sorting classes in a predictable order
 
+### How do you use it?
+
+This is admittedly a little bleeding-edge: prettier supports custom parsers,
+but not custom rules / reformatters, so this essentially augments prettier's
+`babylon`-based parser for JavaScript. You can configure prettier to point to it
+with the `parser` option. For instance, here's how we configure prettier in our
+`.prettierrc`:
+
+```json
+{
+  "parser": "./node_modules/@observablehq/prettier-react-tachyons"
+}
+```
+
 ### Example:
 
 in:
