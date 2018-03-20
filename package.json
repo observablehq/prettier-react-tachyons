@@ -9,5 +9,11 @@
   },
   "dependencies": {
     "babel-traverse": "^6.26.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "engines": {
+    "node": ">= 6"
   }
 }
