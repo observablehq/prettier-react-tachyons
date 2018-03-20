@@ -1,5 +1,7 @@
 ## @observablehq/prettier-react-tachyons
 
+[![CircleCI](https://circleci.com/gh/observablehq/prettier-react-tachyons/tree/master.svg?style=svg)](https://circleci.com/gh/observablehq/prettier-react-tachyons/tree/master)
+
 A [prettier](https://prettier.io/) custom [parser plugin](https://prettier.io/docs/en/api.html#custom-parser-api)
 for users of React and tachyons. It adds an extra prettier transform for `className=`
 attributes on JSX elements, that takes care of the following:
