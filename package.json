@@ -5,14 +5,16 @@
   "license": "MIT",
   "devDependencies": {
     "jest": "^22.4.2",
-    "prettier": "^1.11.1"
+    "prettier": "^1.11.1",
+    "standard-version": "^4.3.0"
   },
   "files": [],
   "dependencies": {
     "babel-traverse": "^6.26.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "release": "standard-version"
   },
   "engines": {
     "node": ">= 6"

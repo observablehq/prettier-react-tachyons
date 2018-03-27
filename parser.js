@@ -52,7 +52,7 @@ let order = [
   /^mw\d/,
   /^h\d/,
   /^center/,
-  /^v-(mid|top|btm)/,
+  /^v-(base|mid|top|btm)/,
   /^(content|items|self|justify|order)/,
   ...directions.map(d => new RegExp(`^p${d}\\d`)),
   ...directions.map(d => new RegExp(`^m${d}\\d`)),
