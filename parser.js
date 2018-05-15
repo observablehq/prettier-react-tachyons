@@ -1,3 +1,4 @@
+const shades = ["05", "10", "20", "30", "40", "50", "60", "70", "80", "90"];
 const colors = [
   "black",
   "near-black",
@@ -35,7 +36,9 @@ const colors = [
   "washed-green",
   "washed-yellow",
   "washed-red"
-];
+]
+  .concat(shades.map(s => `black-${s}`))
+  .concat(shades.map(s => `white-${s}`));
 
 const directions = "hvatlbr".split("");
 
@@ -44,35 +47,51 @@ const directions = "hvatlbr".split("");
 // hover background, border, border color,
 // border radius
 let order = [
-  /^(dn|di|db|dib|dit|dt|dtc|flex|inline-flex)/,
-  /^(static|relative|absolute|fixed)/,
-  /^(top|right|bottom|left)-/,
-  /^measure/,
-  /^w-?\d/,
-  /^mw\d/,
-  /^h\d/,
-  /^center/,
-  /^v-(base|mid|top|btm)/,
-  /^(content|items|self|justify|order)/,
-  ...directions.map(d => new RegExp(`^p${d}\\d`)),
-  ...directions.map(d => new RegExp(`^m${d}\\d`)),
-  ...directions.map(d => new RegExp(`^n${d}\\d`)),
-  /^(code|sans-serif|serif)/,
-  /^f\d/,
-  /^fw\d/,
-  /^lh-/,
-  /^(ws-normal|nowrap|pre)/,
-  /^t[lrcj]/,
-  /^(underline|no-underline|strike|ttu|ttc|ttl)/,
-  new RegExp(`^(${colors.join("|")})`),
-  new RegExp(`^(${colors.map(c => `hover-${c}`).join("|")})`),
-  /^o\d/,
-  /^bg-/,
-  /^hover-bg-/,
-  ...directions.map(d => new RegExp(`^b${d}$`)),
-  /^b--/,
-  /^br[\d-]/
-];
+  "(dn|di|db|dib|dit|dt|dtc|flex|inline-flex)",
+  "(static|relative|absolute|fixed)",
+  "(top|right|bottom|left)-\\d+",
+
+  "measure",
+  "measure-wide",
+  "measure-narrow",
+  "indent",
+  "small-caps",
+  "truncate",
+
+  "w-?\\d+",
+  "mw\\d+",
+  "h\\d+",
+  "center",
+  "v-(base|mid|top|btm)",
+  "(content|items|self|justify|order)",
+  ...["l", "r", "n"].map(d => `f${d}`),
+  ...directions.map(d => `p${d}\\d`),
+  ...directions.map(d => `m${d}\\d`),
+  ...directions.map(d => `n${d}\\d`),
+  "(code|sans-serif|serif)",
+  "f\\d",
+  "fw\\d",
+  "lh-w+",
+  "(ws-normal|nowrap|pre)",
+  "t[lrcj]",
+  "(underline|no-underline|strike|ttu|ttc|ttl)",
+  `(${colors.join("|")})`,
+  `(${colors.map(c => `hover-${c}`).join("|")})`,
+  "o\\d+",
+  `(${colors.map(c => `bg-${c}`).join("|")})`,
+  `(${colors.map(c => `hover-bg-${c}`).join("|")})`,
+  ...directions.map(d => `b${d}$`),
+  `(${colors.map(c => `b--${c}`).join("|")})`,
+  "br[\\d-]"
+].reduce((memo, re) => {
+  return memo
+    .concat(
+      ["ns", "m", "l"].map(mq => {
+        return new RegExp(`^${re}-${mq}$`);
+      })
+    )
+    .concat(new RegExp(`^${re}$`));
+}, []);
 
 function weight(c) {
   for (let i = 0; i < order.length; i++) {
