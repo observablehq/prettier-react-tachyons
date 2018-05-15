@@ -14,7 +14,7 @@ test("reformatting examples", () => {
   ).toMatchSnapshot();
   expect(
     prettier.format(
-      `<div className='dib pa2 mr3 black-50 hover-black bg-white ba b--black-30 br2 pointer' />`,
+      `<div className='fl dib pa2 mr3 black-50 hover-black bg-white ba b--black-30 br2 pointer' />`,
       {
         parser
       }
@@ -22,6 +22,11 @@ test("reformatting examples", () => {
   ).toMatchSnapshot();
   expect(
     prettier.format(`<div className=' h2 ' />`, {
+      parser
+    })
+  ).toMatchSnapshot();
+  expect(
+    prettier.format(`<div className='inline-flex flex-column' />`, {
       parser
     })
   ).toMatchSnapshot();
