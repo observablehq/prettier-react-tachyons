@@ -4,7 +4,7 @@
   "main": "parser.js",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^22.4.2",
+    "jest": "^23.4.4",
     "prettier": "^1.11.1",
     "standard-version": "^4.3.0"
   },
