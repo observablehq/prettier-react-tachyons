@@ -31,3 +31,27 @@ test("reformatting examples", () => {
     })
   ).toMatchSnapshot();
 });
+
+
+test("works with typescript", () => {
+  expect(
+    prettier.format(`
+      interface Props {
+        prop?: string;
+      }
+
+      class Component extends React.Component<Props> {
+        ref = React.createRef<HTMLCanvasElement>();
+        property: string;
+        constructor(props: Props) {
+          super(props);
+        }
+        render() {
+          return <div className='h1 h1 w2 pv2 bg-transparent red' />;
+        }
+      }
+    `, {
+      parser
+    })
+  ).toMatchSnapshot();
+});

@@ -10,7 +10,8 @@
   },
   "files": [],
   "dependencies": {
-    "babel-traverse": "^6.26.0"
+    "@babel/traverse": "^7.2.3",
+    "estree-to-babel": "^1.8.0"
   },
   "scripts": {
     "test": "jest",
