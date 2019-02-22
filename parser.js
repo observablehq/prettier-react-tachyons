@@ -100,9 +100,11 @@ function weight(c) {
   return Infinity;
 }
 
-module.exports = function(text, { babylon }) {
-  const traverse = require("babel-traverse").default;
-  const ast = babylon(text);
+module.exports = function(text, parsers) {
+  const toBabel = require('estree-to-babel')
+  const traverse = require("@babel/traverse").default;
+
+  const ast = toBabel(parsers.typescript(text));
 
   traverse(ast, {
     JSXAttribute({ node }) {
@@ -111,7 +113,7 @@ module.exports = function(text, { babylon }) {
         node.name.name == "className" &&
         node.value.type == "StringLiteral"
       ) {
-        node.value.extra.raw = `"${Array.from(
+        node.value.raw = `"${Array.from(
           new Set(node.value.value.split(/\s+/).filter(Boolean)),
           (c, i) => [c, weight(c), i]
         )

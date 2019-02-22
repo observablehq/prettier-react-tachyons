@@ -24,3 +24,21 @@ exports[`reformatting examples 5`] = `
 "<div className=\\"inline-flex flex-column\\" />;
 "
 `;
+
+exports[`works with typescript 1`] = `
+"interface Props {
+  prop?: string;
+}
+
+class Component extends React.Component<Props> {
+  ref = React.createRef<HTMLCanvasElement>();
+  property: string;
+  constructor(props: Props) {
+    super(props);
+  }
+  render() {
+    return <div className=\\"w2 h1 pv2 red bg-transparent\\" />;
+  }
+}
+"
+`;
