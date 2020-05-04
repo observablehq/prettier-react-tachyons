@@ -100,9 +100,9 @@ function weight(c) {
   return Infinity;
 }
 
-module.exports = function(text, { babylon }) {
-  const traverse = require("babel-traverse").default;
-  const ast = babylon(text);
+module.exports = function(text, { babel }) {
+  const traverse = require("@babel/traverse").default;
+  const ast = babel(text);
 
   traverse(ast, {
     JSXAttribute({ node }) {
