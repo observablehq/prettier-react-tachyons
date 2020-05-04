@@ -1,6 +1,6 @@
 ## @observablehq/prettier-react-tachyons
 
-[![CircleCI](https://circleci.com/gh/observablehq/prettier-react-tachyons/tree/master.svg?style=svg)](https://circleci.com/gh/observablehq/prettier-react-tachyons/tree/master)
+![Node CI](https://github.com/observablehq/prettier-react-tachyons/workflows/Node%20CI/badge.svg)
 
 A [prettier](https://prettier.io/) custom [parser plugin](https://prettier.io/docs/en/api.html#custom-parser-api)
 for users of React and tachyons. It adds an extra prettier transform for `className=`
